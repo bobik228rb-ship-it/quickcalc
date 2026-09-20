@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickCalc</title>
+</head>
+<body>
+
+  <h1>🧮 QuickCalc</h1>
+  <p>Калькулятор скидки</p>
+
+  <input id="price" type="number" placeholder="Цена (€)">
+  <input id="discount" type="number" placeholder="Скидка (%)">
+
+  <button onclick="calculate()">Посчитать</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function calculate() {
+      const price = Number(document.getElementById("price").value);
+      const discount = Number(document.getElementById("discount").value);
+
+      const saving = price * discount / 100;
+      const finalPrice = price - saving;
+
+      document.getElementById("result").innerText =
+        "Итого: €" + finalPrice.toFixed(2) +
+        " | Экономия: €" + saving.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
